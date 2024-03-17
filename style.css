@@ -15,6 +15,7 @@ nav {
   margin: 0;
   padding: 5px;
   text-align: center;
+
 }
 
 nav img {
@@ -65,22 +66,37 @@ img {
 /* ---Your code starts here--- */
 
 nav {
-  /* všimni si, že při scrollování obsahem stránky navigace zůstává na vrchu viewportu  */
+  position: fixed;
+  margin-bottom: 10px;
+  z-index: 3;
 }
 
-main {
-  /* zajisti, aby navigace nepřekrývala obsah. Navigace je vysoká 40px*/
+main {}
+
+h3 {
+  margin-top: 55px;
 }
 
 .travel {
+  position: sticky;
+  top: 50px;
+  z-index: 2;
+
+
   /* tento div při scrollování neodjede s obsahem, ale přilepí 10px pod navigací (50px od vrchu obsahu) */
 }
 
+
 .picture {
-  /* je potřeba zajistit, abychom mohli přesunout popisek obrázku do pravého horního rohu obrázku */
+  position: relative;
+  z-index: 1;
+
 }
 
 .picture-description {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   /* popisek obrázku se nachází přímo na obrázku, 10px shora a 10px zprava */
 }
 
@@ -89,6 +105,15 @@ main {
   /* obrázky hor a moře jsou zleva odsunuty o 450px */
 }
 
+.picture:nth-child(2n) {
+  position: relative;
+  left: 450px;
+  /* je potřeba zajistit, abychom mohli přesunout popisek obrázku do pravého horního rohu obrázku */
+}
+
+
 .chat {
-  /* malého chatbota na stránce vidíme pořád. Visí vpravo dole, 10px od okrajů */
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }
